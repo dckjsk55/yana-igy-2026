@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YANA–IGY | You Are Never Alone I Got You</title>
+  <style>
+    body { margin:0; font-family:Arial,sans-serif; background:#000; color:#fff; text-align:center; overflow:hidden; }
+    .hero { min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; background:radial-gradient(circle at center, #8B0000, #000); }
+    .shield { position:relative; width:320px; height:380px; }
+    .shield-bg { width:320px; height:380px; background:#DC143C; clip-path:polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0% 80%, 0% 20%); box-shadow:0 0 80px #DC143C; animation:pulse 4s infinite; }
+    .bolt { position:absolute; top:50%; left:50%; width:140px; height:280px; background:linear-gradient(to bottom, #00f0ff, #0088ff); clip-path:polygon(50% 0%, 0% 40%, 40% 40%, 10% 100%, 90% 100%, 60% 40%, 100% 40%); transform:translate(-50%,-50%); animation:lightning 3s infinite; }
+    @keyframes pulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.06); } }
+    @keyframes lightning { 0%,100% { opacity:0.9; } 50% { opacity:1; box-shadow:0 0 50px #00f0ff; } }
+    h1 { font-size:3.5rem; margin:30px 0; letter-spacing:2px; }
+    p { font-size:1.6rem; max-width:900px; margin:20px auto; line-height:1.5; }
+    .btn { background:#DC143C; color:#fff; padding:20px 50px; font-size:1.8rem; border:none; border-radius:12px; cursor:pointer; margin:40px; box-shadow:0 0 30px #DC143C; }
+    .btn:hover { background:#B22222; }
+    footer { margin-top:60px; font-size:1rem; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="shield">
+      <div class="shield-bg"></div>
+      <div class="bolt"></div>
+    </div>
+    <h1>YOU ARE NEVER ALONE<br>I GOT YOU</h1>
+    <p>One signature protects every phone in your county — even when the grid dies and towers fail.</p>
+    <p>90 days completely free. See it save lives before you pay.</p>
+    <button class="btn" onclick="alert('County signup form coming soon — email dan@yana-igy.com')">SUBSCRIBE YOUR COUNTY NOW</button>
+  </div>
+  <footer>You Are Never Alone I Got You LLC • Omaha, Nebraska</footer>
+</body>
+</html><footer>You Are Never Alone I Got You LLC • Omaha, Nebraska • Dan Keyes 2025</footer>

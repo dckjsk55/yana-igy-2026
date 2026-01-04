@@ -1,0 +1,23 @@
+how-it-works.html
+HTML<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How YANA–IGY Works</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>How YANA–IGY Works</h1>
+    <p>YANA–IGY delivers precision alerts during natural disasters — giving more time to reach safety.</p>
+    <ul>
+      <li>Only phones in danger zone alert — no broad panic.</li>
+      <li>Large green arrow points exact safe path.</li>
+      <li>Works offline — mesh phone-to-phone.</li>
+      <li>Inclusion for vulnerable — voice, vibration, larger text.</li>
+    </ul>
+    <a href="index.html">Home</a>
+  </div>
+</body>
+</html>
