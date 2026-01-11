@@ -1,17 +1,1 @@
-6. script.js (Optional Animations)
-JavaScript// Simple logo pulse (optional)
-document.addEventListener('DOMContentLoaded', () => {
-  const logo = document.querySelector('.logo');
-  if (logo) {
-    logo.style.animation = 'pulse 2s infinite';
-  }
-});
 
-// Add to styles.css if used
-/*
-@keyframes pulse {
-  0% { opacity: 0.8; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.05); }
-  100% { opacity: 0.8; transform: scale(1); }
-}
-*/
