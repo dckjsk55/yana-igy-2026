@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YANA–IGY Dashboard – Dan Only</title>
+  <style>
+    body { background:#111; color:#fff; font-family:Arial; padding:40px; }
+    .section { margin:30px 0; padding:20px; background:#222; border-radius:10px; }
+    .status { font-size:1.5em; margin:10px 0; }
+    button { background:#c00; color:#fff; padding:15px 30px; border:none; border-radius:8px; cursor:pointer; margin:10px; }
+    .green { color:#0f0; }
+    .red { color:#f00; }
+  </style>
+</head>
+<body>
+  <h1>YANA–IGY Dashboard – Daniel Caspar Keyes</h1>
+  <p>Shield Status: <span class="status red">PAUSED (100%)</span></p>
+
+  <div class="section">
+    <h2>System Status</h2>
+    <p>Last Anomaly Detected: [Never — paused]</p>
+    <p>Nodes in Mesh: [0 — paused]</p>
+    <p>AIM Confidence: [N/A]</p>
+    <p>WDP Signal Activity: [N/A]</p>
+    <p>Ledger Balance: [0 — paused]</p>
+  </div>
+
+  <div class="section">
+    <h2>Toggles (Disabled – Paused)</h2>
+    <button disabled>Global Blanket: OFF</button>
+    <button disabled>Mesh Wake: OFF</button>
+    <button disabled>DolphinGemma Layer: OFF</button>
+  </div>
+
+  <div class="section">
+    <h2>Inventions (View Only)</h2>
+    <p>Original 27 locked – no changes without authorization.</p>
+    <button onclick="alert('List of 27 original inventions – see Dan’s master list.')">View Inventions List</button>
+  </div>
+
+  <button style="background:#0a0;" disabled>Activate Shield (Disabled – Paused)</button>
+</body>
+</html>
