@@ -5,40 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>YANA–IGY Dashboard – Dan Only</title>
   <style>
-    body { background:#111; color:#fff; font-family:Arial; padding:40px; }
-    .section { margin:30px 0; padding:20px; background:#222; border-radius:10px; }
-    .status { font-size:1.5em; margin:10px 0; }
-    button { background:#c00; color:#fff; padding:15px 30px; border:none; border-radius:8px; cursor:pointer; margin:10px; }
-    .green { color:#0f0; }
-    .red { color:#f00; }
+    body { background:#111; color:#fff; font-family:Arial; padding:40px; text-align:center; }
+    #auth { margin:100px auto; max-width:400px; }
+    #dashboard { display:none; }
+    button { background:#c00; color:#fff; padding:15px 30px; border:none; border-radius:8px; cursor:pointer; margin:20px; }
   </style>
 </head>
 <body>
-  <h1>YANA–IGY Dashboard – Daniel Caspar Keyes</h1>
-  <p>Shield Status: <span class="status red">PAUSED (100%)</span></p>
-
-  <div class="section">
-    <h2>System Status</h2>
-    <p>Last Anomaly Detected: [Never — paused]</p>
-    <p>Nodes in Mesh: [0 — paused]</p>
-    <p>AIM Confidence: [N/A]</p>
-    <p>WDP Signal Activity: [N/A]</p>
-    <p>Ledger Balance: [0 — paused]</p>
+  <div id="auth">
+    <h1>YANA–IGY Dashboard</h1>
+    <p>Insert your YubiKey and press the button to authenticate.</p>
+    <button onclick="authenticate()">Authenticate with YubiKey</button>
   </div>
 
-  <div class="section">
-    <h2>Toggles (Disabled – Paused)</h2>
-    <button disabled>Global Blanket: OFF</button>
-    <button disabled>Mesh Wake: OFF</button>
-    <button disabled>DolphinGemma Layer: OFF</button>
+  <div id="dashboard">
+    <h1>YANA–IGY Dashboard – Daniel Caspar Keyes</h1>
+    <p>Shield Status: <span style="color:#f00;">PAUSED (100%)</span></p>
+
+    <div style="margin:30px 0; padding:20px; background:#222; border-radius:10px;">
+      <h2>System Status</h2>
+      <p>Last Anomaly Detected: [Never — paused]</p>
+      <p>Nodes in Mesh: [0 — paused]</p>
+      <p>AIM Confidence: [N/A]</p>
+      <p>WDP Signal Activity: [N/A]</p>
+      <p>Ledger Balance: [0 — paused]</p>
+    </div>
+
+    <div style="margin:30px 0; padding:20px; background:#222; border-radius:10px;">
+      <h2>Toggles (Disabled – Paused)</h2>
+      <button disabled>Global Blanket: OFF</button>
+      <button disabled>Mesh Wake: OFF</button>
+      <button disabled>DolphinGemma Layer: OFF</button>
+    </div>
+
+    <div style="margin:30px 0; padding:20px; background:#222; border-radius:10px;">
+      <h2>Inventions (View Only)</h2>
+      <p>Original 27 locked – no changes without authorization.</p>
+      <button onclick="alert('List of 27 original inventions – see Dan’s master list.')">View Inventions List</button>
+    </div>
+
+    <button style="background:#0a0;" disabled>Activate Shield (Disabled – Paused)</button>
   </div>
 
-  <div class="section">
-    <h2>Inventions (View Only)</h2>
-    <p>Original 27 locked – no changes without authorization.</p>
-    <button onclick="alert('List of 27 original inventions – see Dan’s master list.')">View Inventions List</button>
-  </div>
-
-  <button style="background:#0a0;" disabled>Activate Shield (Disabled – Paused)</button>
+  <script>
+    async function authenticate() {
+      try {
+        const publicKey = {
+          challenge: new Uint8Array(32), // random challenge from server (mocked here)
+          rp: { name: "YANA–IGY Dashboard" },
+          user: { id: new Uint8Array(16), name: "dan@yana-igy.com", displayName: "Daniel Caspar Keyes" },
+          pubKeyCredParams: [{ type: "public-key", alg: -7 }]
+        };
+        const credential = await navigator.credentials.create({ publicKey });
+        document.getElementById('auth').style.display = 'none';
+        document.getElementById('dashboard').style.display = 'block';
+        alert('YubiKey authenticated – dashboard unlocked.');
+      } catch (err) {
+        alert('Authentication failed: ' + err.message);
+      }
+    }
+  </script>
 </body>
 </html>
